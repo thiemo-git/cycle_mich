@@ -54,7 +54,7 @@ class BarcodeController extends Controller
         ]);
 
         $response = curl_exec($ch);
-        if(curl_errno($ch)) {
+        if(curl_errno($ch) || curl_getinfo($ch, CURLINFO_HTTP_CODE) != 200) {
             return NULL;
         }
         curl_close($ch);
