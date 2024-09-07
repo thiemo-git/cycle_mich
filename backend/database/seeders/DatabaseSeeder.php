@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
 
         $trashtypes = Trashtype::all();
 
-        Barcode::all()->each(function ($user) use ($trashtypes) { 
-            $user->trashtypes()->attach(
+        Barcode::all()->each(function ($barcode) use ($trashtypes) { 
+            $barcode->trashtypes()->attach(
                 $trashtypes->random(rand(1, 2))->pluck('id')->toArray()
             ); 
         });
