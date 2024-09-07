@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('admin', [AdminController::class, 'index']);
+Route::middleware('auth')->get('admin/list', [AdminController::class, 'list']);
+Route::middleware('auth')->get('admin/item/{id}', [AdminController::class, 'item']);
+Route::middleware('auth')->post('admin/item/{id}', [AdminController::class, 'edit']);
+
+Route::post('admin/login', [AdminController::class, 'login']);
