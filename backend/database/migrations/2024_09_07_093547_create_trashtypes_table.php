@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('trashtypes', function (Blueprint $table) {
             $table->id();
-            $table->varchar('key', 10);
+            $table->string('key', 10);
             $table->text('notes')->nullable();
         });
     }
