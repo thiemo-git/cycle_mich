@@ -18,5 +18,6 @@ Route::get('admin', [AdminController::class, 'index']);
 Route::middleware('auth')->get('admin/list', [AdminController::class, 'list']);
 Route::middleware('auth')->get('admin/item/{id}', [AdminController::class, 'item']);
 Route::middleware('auth')->post('admin/item/{id}', [AdminController::class, 'edit']);
+Route::middleware('auth')->get('admin/delete/{id}', [AdminController::class, 'delete']);
 
 Route::post('admin/login', [AdminController::class, 'login']);

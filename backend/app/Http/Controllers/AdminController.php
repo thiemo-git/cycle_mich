@@ -82,4 +82,10 @@ class AdminController extends Controller
 
         return redirect('/admin/list');
     }
+
+    public function delete(Request $request, int $id) {
+        $barcode = Barcode::findOrFail($id);
+        $barcode->delete();
+        return redirect('/admin/list');
+    }
 }

@@ -58,5 +58,6 @@
         </div>
         <input class="submit" type="submit" value="Speichern">
     </form>
+    <a href="/admin/delete/{{ $barcode->id }}">Löschen</a>
 </body>
 </html>
