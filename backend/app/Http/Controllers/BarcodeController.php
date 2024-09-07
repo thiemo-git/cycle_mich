@@ -17,7 +17,7 @@ class BarcodeController extends Controller
 
             if (!empty($barcode->title)) {
                 return response()->json([
-                    'message' => "Das Produkt wurde $barcode->title noch nicht verarbeitet",
+                    'message' => "Das Produkt $barcode->title wurde noch nicht verarbeitet",
                     'title' => $barcode->title
                 ], 404);
             }
