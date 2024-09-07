@@ -9,5 +9,10 @@ class Trashtype extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'key',
+        'notes'
+    ];
+
     public $timestamps = false;
 }
