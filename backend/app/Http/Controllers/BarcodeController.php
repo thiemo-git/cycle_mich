@@ -66,7 +66,10 @@ class BarcodeController extends Controller
         } else if (array_key_exists('en', $titles)) {
             return $titles['en'];
         } else {
-            return $titles[0];
+            if (count($titles) > 0) {
+                return $titles[array_key_first($titles)];
+            }
+            return NULL;
         }
     }
 }
