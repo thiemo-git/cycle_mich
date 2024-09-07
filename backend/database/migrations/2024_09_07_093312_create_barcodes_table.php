@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('barcodes', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id')->primary()->unique();
             $table->string('title', 50);
             $table->text('notes')->nullable();
             $table->timestamps();
